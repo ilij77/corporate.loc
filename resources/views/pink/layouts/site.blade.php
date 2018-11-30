@@ -28,54 +28,54 @@
     <title>Pink Rio | A strong, powerful and multiporpose WordPress Theme</title>
 
     <!-- [favicon] begin -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset(env('THEME'))}}/images/favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="{{asset(env('THEME'))}}/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset(env('THEME')) }}/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(env('THEME')) }}/images/favicon.ico" />
     <!-- Touch icons more info: http://mathiasbynens.be/notes/touch-icons -->
     <!-- For iPad3 with retina display: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset(env('THEME'))}}/apple-touch-icon-144x.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset(env('THEME')) }}/apple-touch-icon-144x.png" />
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset(env('THEME'))}}/apple-touch-icon-114x.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset(env('THEME')) }}/apple-touch-icon-114x.png" />
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset(env('THEME'))}}/apple-touch-icon-72x.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset(env('THEME')) }}/apple-touch-icon-72x.png" />
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="{{asset(env('THEME'))}}/apple-touch-icon-57x.png" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset(env('THEME')) }}/apple-touch-icon-57x.png" />
     <!-- [favicon] end -->
 
     <!-- CSSs -->
-    <link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/css/reset.css" /> <!-- RESET STYLESHEET -->
-    <link rel="stylesheet" type="text/css" media="all" href="{{asset(env('THEME'))}}/style.css" /> <!-- MAIN THEME STYLESHEET -->
-    <link rel="stylesheet" id="max-width-1024-css" href="{{asset(env('THEME'))}}/css/max-width-1024.css" type="text/css" media="screen and (max-width: 1240px)" />
-    <link rel="stylesheet" id="max-width-768-css" href="{{asset(env('THEME'))}}/css/max-width-768.css" type="text/css" media="screen and (max-width: 987px)" />
-    <link rel="stylesheet" id="max-width-480-css" href="{{asset(env('THEME'))}}/css/max-width-480.css" type="text/css" media="screen and (max-width: 480px)" />
-    <link rel="stylesheet" id="max-width-320-css" href="{{asset(env('THEME'))}}/css/max-width-320.css" type="text/css" media="screen and (max-width: 320px)" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/reset.css" /> <!-- RESET STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/style.css" /> <!-- MAIN THEME STYLESHEET -->
+    <link rel="stylesheet" id="max-width-1024-css" href="{{ asset(env('THEME')) }}/css/max-width-1024.css" type="text/css" media="screen and (max-width: 1240px)" />
+    <link rel="stylesheet" id="max-width-768-css" href="{{ asset(env('THEME')) }}/css/max-width-768.css" type="text/css" media="screen and (max-width: 987px)" />
+    <link rel="stylesheet" id="max-width-480-css" href="{{ asset(env('THEME')) }}/css/max-width-480.css" type="text/css" media="screen and (max-width: 480px)" />
+    <link rel="stylesheet" id="max-width-320-css" href="{{ asset(env('THEME')) }}/css/max-width-320.css" type="text/css" media="screen and (max-width: 320px)" />
 
     <!-- CSSs Plugin -->
-    <link rel="stylesheet" id="thickbox-css" href="{{asset(env('THEME'))}}/css/thickbox.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="styles-minified-css" href="{{asset(env('THEME'))}}/css/style-minifield.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="buttons" href="{{asset(env('THEME'))}}/css/buttons.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="cache-custom-css" href="{{asset(env('THEME'))}}/css/cache-custom.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="custom-css" href="{{asset(env('THEME'))}}/css/custom.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="thickbox-css" href="{{ asset(env('THEME')) }}/css/thickbox.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="styles-minified-css" href="{{ asset(env('THEME')) }}/css/style-minifield.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="buttons" href="{{ asset(env('THEME')) }}/css/buttons.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="cache-custom-css" href="{{ asset(env('THEME')) }}/css/cache-custom.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="custom-css" href="{{ asset(env('THEME')) }}/css/custom.css" type="text/css" media="all" />
 
     <!-- FONTs -->
     <link rel="stylesheet" id="google-fonts-css" href="http://fonts.googleapis.com/css?family=Oswald%7CDroid+Sans%7CPlayfair+Display%7COpen+Sans+Condensed%3A300%7CRokkitt%7CShadows+Into+Light%7CAbel%7CDamion%7CMontez&amp;ver=3.4.2" type="text/css" media="all" />
-    <link rel='stylesheet' href='{{asset(env('THEME'))}}/css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='{{ asset(env('THEME')) }}/css/font-awesome.css' type='text/css' media='all' />
 
     <!-- JAVASCRIPTs -->
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/comment-reply.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.quicksand.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.tipsy.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.cycle.min.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.anythingslider.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.eislideshow.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.easing.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.aw-showcase.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/layerslider.kreaturamedia.jquery-min.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/shortcodes.js"></script>
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.colorbox-min.js"></script> <!-- nav -->
-    <script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.tweetable.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/comment-reply.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.cycle.min.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.anythingslider.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.eislideshow.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.aw-showcase.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/layerslider.kreaturamedia.jquery-min.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/shortcodes.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.colorbox-min.js"></script> <!-- nav -->
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.tweetable.js"></script>
 
 </head>
 <!-- END HEAD -->
@@ -111,8 +111,8 @@
                 <hr />
 
                 <!-- START MAIN NAVIGATION -->
-                @yield('navigation')
-                <!-- END MAIN NAVIGATION -->
+            @yield('navigation')
+            <!-- END MAIN NAVIGATION -->
                 <div id="header-shadow"></div>
                 <div id="menu-shadow"></div>
             </div>
@@ -121,123 +121,10 @@
         <!-- END HEADER -->
 
         <!-- START SLIDER -->
-        <div id="slider-cycle" class="slider cycle no-responsive slider_cycle group" style="height:485px;">
-            <ul class="slider">
-                <li>
-                    <div class="slide-holder" style="background:  url('images/slider-cycle/xx.jpg') no-repeat center center" style="height:483px;">
-                        <div class="slide-content-holder inner" style="height:483px;">
-                            <div class="slide-content-holder-content" style="position: absolute; top:30px;right:650px;">
-                                <div class="slide-title">
-                                    <h2 style="color:#fff">CORPORATE, MULTIPURPOSE.. <br /><span>PINK RIO</span></h2>
-                                </div>
-                                <div class="slide-content" style="color:#fff">
-                                    <p>Nam id quam a odio euismod pellentesque. Etiam congue rutrum risus non vestibulum. Quisque a diam at ligula blandit consequat. Mauris ac mi velit, a tempor neque</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-holder" style="background:  url('images/slider-cycle/00314.jpg') no-repeat center center" style="height:483px;">
-                        <div class="slide-content-holder inner" style="height:483px;">
-                            <div class="slide-content-holder-content" style="position: absolute; top:80px;left:500px;">
-                                <div class="slide-title">
-                                    <h2 style="color:#fff">PINKRIO. <span>STRONG AND POWERFUL.</span></h2>
-                                </div>
-                                <div class="slide-content" style="color:#fff">
-                                    <p>Nam id quam a odio euismod pellentesque. Etiam congue rutrum risus non vestibulum. Quisque a diam at ligula blandit consequat. Mauris ac mi velit, a tempor neque</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-holder" style="background:  url('images/slider-cycle/dd.jpg') no-repeat center center" style="height:483px;">
-                        <div class="slide-content-holder inner" style="height:483px;">
-                        </div>
-                    </div>
-                </li>
-            </ul>
 
-            <div id="yit-widget-area" class="group">
-                <div class="yit-widget-content inner group">
-                    <div class="widget-first yit-widget widget col1_4 one-fourth col widget-icon-text group">
-                        <img class="icon-img" src="images/icons/cloud.jpg" alt="" />
-                        <h3>Great Design</h3>
-                        <p>A widgetized area: add shorcodes, text, icons and more.</p>
-                    </div>
-                    <div class="yit-widget widget col1_4 one-fourth col widget-last-post group">
-                        <img class="icon-img" src="images/icons/blog1.png" alt="" />
-                        <div>
-                            <h3><a class="text-color" href="#" title="">Blog news</a></h3>
-                            <p>Section shortcodes &amp; sticky posts! <a href="article.html"> | more →</a></p>
-                        </div>
-                    </div>
-                    <div class="widget-last yit-widget widget col1_4 one-fourth col yit_text_quote">
-                        <blockquote class="text-quote-quote">“Anyone who has never made a mistake has never tried anything new.”</blockquote>
-                        <cite class="text-quote-author">Albert Einstein</cite>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            jQuery(document).ready(function($){
+    @yield('slider')
 
-                var     yit_slider_cycle_fx = 'easing',
-                    yit_slider_cycle_speed = 800,
-                    yit_slider_cycle_timeout = 3000,
-                    yit_slider_cycle_directionNav = true,
-                    yit_slider_cycle_directionNavHide = true,
-                    yit_slider_cycle_autoplay = true;
-
-                var yit_widget_area_position = function(){
-                    $('#yit-widget-area').css({ top: 33 - $('#yit-widget-area').height() });
-                };
-                $(window).resize(yit_widget_area_position);
-                yit_widget_area_position();
-
-                if( $.browser.msie && parseInt($.browser.version.substr(0,1),10) <= '8' ) {
-                    $('#slider-cycle ul.slider').anythingSlider({
-                        expand              : true,
-                        startStopped        : false,
-                        buildArrows         : yit_slider_cycle_directionNav,
-                        buildNavigation     : false,
-                        buildStartStop      : false,
-                        delay               : yit_slider_cycle_timeout,
-                        animationTime       : yit_slider_cycle_speed,
-                        easing              : yit_slider_cycle_fx,
-                        autoPlay            : yit_slider_cycle_autoplay ? true : false,
-                        pauseOnHover        : true,
-                        toggleArrows        : false,
-                        resizeContents      : true
-                    });
-                } else {
-                    $('#slider-cycle ul.slider').anythingSlider({
-                        expand              : true,
-                        startStopped        : false,
-                        buildArrows         : yit_slider_cycle_directionNav,
-                        buildNavigation     : false,
-                        buildStartStop      : false,
-                        delay               : yit_slider_cycle_timeout,
-                        animationTime       : yit_slider_cycle_speed,
-                        easing              : yit_slider_cycle_fx,
-                        autoPlay            : yit_slider_cycle_autoplay ? true : false,
-                        pauseOnHover        : true,
-                        toggleArrows        : yit_slider_cycle_directionNavHide ? true : false,
-                        onSlideComplete     : function(slider){},
-                        resizeContents      : true,
-                        onSlideBegin        : function(slider) {},
-                        onSlideComplete     : function(slider) {}
-                    });
-
-                }
-            });
-        </script>
-        <div class="mobile-slider">
-            <div class="slider fixed-image inner"><img src="images/slider-cycle/cycle-fixed.jpg" alt="" /></div>
-        </div>
-
-        <!-- START PRIMARY -->
+    <!-- START PRIMARY -->
         <div id="primary" class="sidebar-right">
             <div class="inner group">
                 <!-- START CONTENT -->
@@ -405,9 +292,9 @@
 </div>
 <!-- END BG SHADOW -->
 
-<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.custom.js"></script>
-<script type="text/javascript" src="{{asset(env('THEME'))}}/js/contact.js"></script>
-<script type="text/javascript" src="{{asset(env('THEME'))}}/js/jquery.mobilemenu.js"></script>
+<script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.custom.js"></script>
+<script type="text/javascript" src="{{ asset(env('THEME')) }}/js/contact.js"></script>
+<script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.mobilemenu.js"></script>
 
 </body>
 <!-- END BODY -->
