@@ -4,7 +4,7 @@
     <div class="hentry group">
         <div class="section portfolio">
 
-            <h3 class="title">Latest projects</h3>
+            <h3 class="title">{{trans('ru.latest_projects')}}</h3>
             @foreach($portfolio as $k=>$item)
 
 @if($k==0)
