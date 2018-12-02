@@ -7,16 +7,20 @@
  */
 
 namespace Corp\Repositories;
-use Config;
+use Illuminate\Support\Facades\Config;
 
 abstract class Repository
 {
 protected $model=false;
-public function get($select='*',$take=false){
+public function get($select='*',$take=false,$pagination=false){
 
     $builder=$this->model->select($select);
 if ($take){
     $builder->take($take);
+}
+
+if ($pagination){
+    return $this->check($builder->paginate(Config::get('settings.paginate')));
 }
 
     return $this->check($builder->get());

@@ -21,7 +21,7 @@ Route::resource ('portfolio','PortfolioController',[
 ]);
 
 
-Route::resource('articles','ArticleController',[
+Route::resource('articles','ArticlesController',[
     'parameters'=>[
         'articles'=>'alias'
     ]
