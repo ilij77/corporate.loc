@@ -39,7 +39,7 @@ class SiteController extends Controller
 
        if ($this->contentRightBar){
            $rightBar=view(env('THEME').'.rightBar')->with('content_rightBar',$this->contentRightBar)->render();
-       }
+       }else $rightBar=false;
        $this->vars=array_add($this->vars,'rightBar',$rightBar);
        $this->vars=array_add($this->vars,'bar',$this->bar);
        $footer=view(env('THEME').'.footer')->render();

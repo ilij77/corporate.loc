@@ -8,7 +8,7 @@
     {!! $content !!}
 @endsection
 @section('bar')
-    {!! $rightBar !!}
+    {!!  $rightBar!!}
 @endsection
 @section('footer')
     {!! $footer !!}
