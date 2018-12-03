@@ -61,7 +61,8 @@
                 @endif
 
             @endif
-            </div>
+
+
 
 @else
 {!! Lang::get('ru.article_no') !!}
