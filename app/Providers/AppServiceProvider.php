@@ -2,6 +2,7 @@
 
 namespace Corp\Providers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -19,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
             return "<? $name=$val?>";
         });
         //
+
+
+        DB::listen(function ($query){
+           // echo '<h1>'.$query->sql.'</h1>';
+        });
     }
 
     /**
