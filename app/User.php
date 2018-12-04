@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function articles(){
+    public function article(){
         return $this->hasMany('Corp\Article');
     }
 

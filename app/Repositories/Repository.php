@@ -41,13 +41,14 @@ protected function check($result){
       $item->img=json_decode($item->img);
       return$item;
   });
+  //dd($result);
   return $result;
   }
 
-  public function one($alias,$attr=array()){
-   $result=$this->model->where('alias',$alias)->first();
-   return $result;
+    public function one($alias,$attr = array()) {
+        $result = $this->model->where('alias',$alias)->first();
 
-  }
+        return $result;
+    }
 
 }

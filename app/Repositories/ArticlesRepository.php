@@ -16,9 +16,9 @@ class ArticlesRepository extends Repository
         $this->model=$articles;
     }
 
-    public function one($alias, $attr = array())
-    {
-        $article=parent::one($alias, $attr);
+    public function one($alias,$attr=array()){
+        $article=parent::one($alias,$attr);
+
         if ($article && !empty($attr)){
            $article->load('comment');
            $article->comment->load('user');
