@@ -19,6 +19,7 @@ fadeIn(500,function () {
         data:data,
         type:'POST',
         datatype:'JSON',
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         success:function () {
 
         },
