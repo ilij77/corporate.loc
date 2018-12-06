@@ -862,3 +862,7 @@ form input[type="text"], form textarea { border: 1px solid #CFCFCF; -webkit-tran
     display: none;
     z-index: 5005
 }
+.borGreen {
+    border: 2px solid green !important;
+}
+
