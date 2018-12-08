@@ -9,9 +9,9 @@
                     <div class="hentry-post group">
                         <div class="thumb-img"><img style="width: 55px" src="{{asset(env('THEME'))}}/images/projects/{{$portfolio->img->mini}}" alt="001" title="{{$portfolio->title}}" /></div>
                         <div class="text">
-                            <a href="{{route('portfolio.show',['alias'=>$portfolio->alias])}}" title="{{$portfolio->title}}" class="title">Section shortcodes &amp; sticky posts!</a>
+                            <a href="{{route('portfolios.show',['alias'=>$portfolio->alias])}}" title="{{$portfolio->title}}" class="title">Section shortcodes &amp; sticky posts!</a>
                            <p> {{str_limit($portfolio->text,100)}}</p>
-                            <a class="read-more" href="{{route('portfolio.show',['alias'=>$portfolio->alias])}}">&rarr; {{Lang::get('ru.read_more')}}</a>
+                            <a class="read-more" href="{{route('portfolios.show',['alias'=>$portfolio->alias])}}">&rarr; {{Lang::get('ru.read_more')}}</a>
                         </div>
                     </div>
                     @endforeach
