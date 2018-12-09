@@ -4,6 +4,7 @@ namespace Corp\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -35,7 +36,13 @@ class Handler extends ExceptionHandler
     public function report(Exception $exception)
     {
         parent::report($exception);
+
+       // dd($exception);
     }
+
+
+
+
 
     /**
      * Render an exception into an HTTP response.
@@ -46,6 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
         return parent::render($request, $exception);
     }
 }
