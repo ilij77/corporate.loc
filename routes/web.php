@@ -33,6 +33,24 @@ Route::  resource('comment','CommentController',['only'=>['store']]);
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
 
 
-Route::get('login','Auth\LoginController@showLoginForm');
+Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@login');
-Route::get('logout','Auth\LoginController@logout');
+Route::get('logout','Auth\LoginController@logout')->name('logout');
+
+
+//Route::resource('admin','Admin\IndexController')->only('index')->name('admin.index');
+
+
+
+Route::prefix('admin')->middleware('auth')->group(function (){
+
+    Route::get('/',['uses'=>'Admin\IndexController@index','as'=>'admin.index']);
+
+    Route::resource('/articles','Admin\ArticlesController');
+    
+    //Route::get('articles',['uses'=>'Admin\ArticlesController@index','as'=>'admin.articles']);
+
+    //Route:: resource ('articles','Admin\ArticlesController');
+//Route::resource ('/', 'IndexController')->only('index')->names(['index'=>'home']) ;
+
+});
