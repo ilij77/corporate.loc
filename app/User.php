@@ -38,6 +38,57 @@ class User extends Authenticatable
         return $this->belongsToMany('Corp\Role','role_user');
     }
 
+    public function canDo($permission,$required=false)
+    {
+        if (is_array($permission))
+        {
+            foreach ($permission as $perName) {
+                $perName=$this->canDo($perName);
+                if ($perName &&  !$required){
+                    return true;
+                }
+                elseif (!$perName &&  $required){
+                    return false;
+                }
+            }
+            return $required;
+
+        }
+        else
+        {
+           foreach ($this->roles as $role) {
+               foreach ($role->permission as $perm){
+                   if (str_is($permission,$perm->name) ){
+                       return true;
+                   }
+               }
+           }
+        }
+    }
+
+    public function hasRole($name,$require=false)
+    {
+        if (is_array($name)){
+
+            foreach ($name as $roleName){
+                $hasRole=$this->hasRole($roleName);
+                if ($hasRole && !$require){
+                    return true;
+                } elseif (!$hasRole && $require){
+                    return false;
+                }
+            }
+           return $require;
+        }else{
+            foreach ($this->roles as $role){
+                if ($role->name == $name){
+                    return true;
+                }
+            }
+        }
+        
+    }
+
 
 
 
