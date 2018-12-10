@@ -42,7 +42,7 @@ Route::get('logout','Auth\LoginController@logout')->name('logout');
 
 
 
-Route::prefix('admin')->middleware('auth')->group(function (){
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function (){
 
     Route::get('/',['uses'=>'Admin\IndexController@index','as'=>'admin.index']);
 
