@@ -159,8 +159,16 @@ class ArticlesController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Article $article)
+    public function update(ArticleRequest $request,Article $article)
     {
+        //dd($request);
+
+        $result=$this->a_rep->updateArticle($request,$article);
+        if (is_array($result) && !empty($result['error'])){
+            return back()->with($result);
+        }
+        //dd($result);
+        return redirect('/admin')->with($result);
 
 
 
