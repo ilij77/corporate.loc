@@ -130,7 +130,7 @@ class ArticlesController extends AdminController
         if (Gate::denies('edit',new Article)){
             abort(403);
         }
-        $article->img=json_encode($article->img);
+        $article->img=json_decode($article->img);
 
         $categories=Category::select(['title','alias','parent_id','id'])->get();
         //dd($categories);
@@ -143,7 +143,7 @@ class ArticlesController extends AdminController
             else {
                 $lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;
             }}
-dd($article);
+            //dd($article);
             $this->title='Редактирование материала - '.$article->title;
             $this->content=view(env('THEME').'.admin.articles_create_content')->with(['categories'=>$lists,'article'=>$article])->render();
             return $this->renderOutput();
@@ -159,9 +159,11 @@ dd($article);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Article $article)
     {
-        //
+
+
+
     }
 
     /**
