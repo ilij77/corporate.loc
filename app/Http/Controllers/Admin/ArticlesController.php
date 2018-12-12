@@ -2,6 +2,9 @@
 
 namespace Corp\Http\Controllers\Admin;
 
+use Corp\Article;
+use Corp\Category;
+use Corp\Http\Requests\ArticleRequest;
 use Corp\Repositories\ArticlesRepository;
 use Illuminate\Http\Request;
 use Corp\Http\Controllers\Controller;
@@ -54,8 +57,36 @@ class ArticlesController extends AdminController
      */
     public function create()
     {
-        //
+        $this->user=Auth::user();
+        //dd($this->user);
+        if ($au= Gate::denies('save',new\Corp\Article)){
+            abort(403);
+        };
+        $this->title='Добавить новый материал';
+
+        $categories=Category::select(['title','alias','parent_id','id'])->get();
+      //dd($categories);
+
+        $lists=array();
+        foreach($categories as $category) {
+        if($category->parent_id == 0) {
+            $lists[$category->title] = array();
+        }
+        else {
+            $lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;
+        }
     }
+
+
+
+        //dd($lists);
+
+        $this->content=view(env('THEME').'.admin.articles_create_content')->with('categories',$lists)->render();
+        return $this->renderOutput();
+
+
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -63,9 +94,15 @@ class ArticlesController extends AdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+       //dd($request);
+        $result=$this->a_rep->addArticle($request);
+        if (is_array($result) && !empty($result['error'])){
+            return back()->with($result);
+        }
+        dd($result);
+       return redirect('/admin')->with($result);
     }
 
     /**
@@ -85,9 +122,34 @@ class ArticlesController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        //
+       //$article=Article::where('alias',$articles);
+       //dd($article);
+
+        if (Gate::denies('edit',new Article)){
+            abort(403);
+        }
+        $article->img=json_encode($article->img);
+
+        $categories=Category::select(['title','alias','parent_id','id'])->get();
+        //dd($categories);
+
+        $lists=array();
+        foreach($categories as $category) {
+            if($category->parent_id == 0) {
+                $lists[$category->title] = array();
+            }
+            else {
+                $lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;
+            }}
+dd($article);
+            $this->title='Редактирование материала - '.$article->title;
+            $this->content=view(env('THEME').'.admin.articles_create_content')->with(['categories'=>$lists,'article'=>$article])->render();
+            return $this->renderOutput();
+
+
+
     }
 
     /**

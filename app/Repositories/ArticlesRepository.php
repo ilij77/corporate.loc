@@ -7,6 +7,10 @@
  */
 namespace  Corp\Repositories;
 use Corp\Article;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Gate;
+use Intervention\Image;
+use Symfony\Component\Translation\Tests\IdentityTranslatorTest;
 
 class ArticlesRepository extends Repository
 {
@@ -25,6 +29,58 @@ class ArticlesRepository extends Repository
         }
         return $article;
     }
+
+    public function addArticle($request)
+    {
+       if (Gate::denies('save',$this->model)){
+           abort(403);
+       }
+       $data=$request->except('_token','image');
+       if (empty($data)){
+           return array('error'=>'Нет данных');
+       }
+       if (empty($data['alias'])){
+           $data['alias']=$this->transliterate($data['title']);
+       }
+       //dd($data);
+        if ($this->one($data['alias'],false)){
+           $request->merge(array('alias'=>$data['alias']));
+           //dd($request);
+            $request->flash();
+            return ['error'=>'Данный псевдоним уже используется'];
+        }
+        if ($request->hasFile('image')){
+            $image=$request->file('image');
+            if ($image->isValid()){
+                $str=str_random(8);
+
+                $obj=new \stdClass;
+                $obj->mini=$str.'_mini.jpg';
+                $obj->max=$str.'_max.jpg';
+                $obj->path=$str.'.jpg';
+                $img=Image\Facades\Image::make($image);
+                //dd($img);
+                $img->fit(Config::get('settings.image')['wight'],
+                    Config::get('settings.image')['height'])->save(public_path().'/'.env('THEME').'/images/articles/'.$obj->path);
+
+                $img->fit(Config::get('settings.articles_img')['max']['wight'],
+                    Config::get('settings.articles_img')['max']['height'])->save(public_path().'/'.env('THEME').'/images/articles/'.$obj->max);
+
+                $img->fit(Config::get('settings.articles_img')['mini']['wight'],
+                    Config::get('settings.articles_img')['mini']['height'])->save(public_path().'/'.env('THEME').'/images/articles/'.$obj->mini);
+                //dd('Hello');
+
+                $data['img']=json_encode($obj);
+                $this->model->fill($data);
+                if ($request->user()->article()->save($this->model)){
+                    return ['status'=>'Материал добавлен'];
+                }
+
+            }
+        }
+
+    }
+
 
 
 }

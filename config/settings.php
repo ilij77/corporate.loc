@@ -8,5 +8,13 @@ return [
     'resent_comments'=>3,
     'resent_portfolios'=>3,
     'other_portfolios'=>8,
+    'articles_img'=>[
+        'max'=>['wight'=>816, 'height'=>282],
+        'mini'=>['wight'=>55, 'height'=>55],
+    ],
+    'image'=>[
+        'wight'=>1024,
+        'height'=>768,
+    ],
 
 ];
