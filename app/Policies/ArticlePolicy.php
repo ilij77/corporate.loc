@@ -2,6 +2,7 @@
 
 namespace Corp\Policies;
 
+use Corp\Article;
 use Corp\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -27,6 +28,13 @@ class ArticlePolicy
     public function edit(User $user)
     {
         return $user->canDo('UPDATE_ARTICLES');
+    }
+
+    public function destroy(User $user,Article $article)
+    {
+
+        //dd($article);
+        return ($user->canDo('DELETE_ARTICLES') && $user->id == $article->user_id);
     }
 
 }

@@ -91,9 +91,13 @@ class ArticlesController extends SiteController
      //dd($article->user->name);
      //dd($article->title);
 
-     $this->title=$article->title;
-        $this->keywords=$article->keywords;
-        $this->meta_desc=$article->meta_desc;
+     if (isset($article->id)){
+         $this->title=$article->title;
+         $this->keywords=$article->keywords;
+         $this->meta_desc=$article->meta_desc;
+     }
+
+
 
         $content=view(env('THEME').'.article_content')->with('article',$article)->render();
         $this->vars=array_add($this->vars,'content',$content);
