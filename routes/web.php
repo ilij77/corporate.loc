@@ -47,6 +47,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function (){
     Route::get('/',['uses'=>'Admin\IndexController@index','as'=>'index']);
 
     Route::resource('/articles','Admin\ArticlesController');
+    Route::resource('/permissions','Admin\PermissionsController');
+
+
     
     //Route::get('articles',['uses'=>'Admin\ArticlesController@index','as'=>'admin.articles']);
 
