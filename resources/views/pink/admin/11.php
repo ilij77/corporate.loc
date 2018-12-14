@@ -67,7 +67,7 @@
                     <div class="input-prepend">
 
                         @if($categories)
-                            {!! Form::select('category_alias',$categories,(isset($option) && $option) ? $option :FALSE) !!}
+                        {!! Form::select('category_alias',$categories,(isset($option) && $option) ? $option :FALSE) !!}
                         @endif
                     </div>
                 </li>
@@ -131,7 +131,7 @@
         <br />
 
         @if(isset($menu->id))
-            <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_method" value="PUT">
 
         @endif
         <ul>
@@ -158,7 +158,9 @@
 
         $('#accordion').accordion({
 
-
+            activate: function(e, obj) {
+                obj.newPanel.prev().find('input[type=radio]').attr('checked','checked');
+            }
 
         });
 
