@@ -101,7 +101,7 @@ class ArticlesController extends AdminController
         if (is_array($result) && !empty($result['error'])){
             return back()->with($result);
         }
-        dd($result);
+        //dd($result);
        return redirect('/admin')->with($result);
     }
 
