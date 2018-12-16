@@ -44,9 +44,10 @@ class UsersRepository extends Repository
 	
 	
 	public function updateUser($request, $user) {
-		
-		
-		if (\Gate::denies('edit',$this->model)) {
+
+        $this->user = Auth::user();
+        //dd($user);
+		if (Gate::denies('edit',$this->model)) {
             abort(403);
         }
 		
@@ -54,7 +55,9 @@ class UsersRepository extends Repository
 		
 		if(isset($data['password'])) {
 			$data['password'] = bcrypt($data['password']);
-		}
+		}else{
+            $data['password'] = $this->user->password;
+        }
 		
 		$user->fill($data)->update();
 		$user->roles()->sync([$data['role_id']]);
